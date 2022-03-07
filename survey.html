@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fox Hill Community Space</title>
+  <link href="stylesheet.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet">
+  <script>
+   function clickSurvey() {
+     if (window.localStorage!==undefined) {
+	   if (localStorage.clickcount) {
+	     localStorage.clickcount = Number(localStorage.clickcount)+1;
+	   } else {
+	     localStorage.clickcount = 1;
+	   }
+	   document.getElementById("result").innerHTML = "Number of votes for pottery: " + localStorage.clickcount + ".";
+	} else {
+	  document.getElementById("result").innerHTML = "Sorry this survey doesn't work in this browser. Please try again with a better one!";
+	  }
+	}
+	function clickSurvey2() {
+     if (window.localStorage!==undefined) {
+	   if (localStorage.clickcount) {
+	     localStorage.clickcount = Number(localStorage.clickcount)+1;
+	   } else {
+	   localStorage.clickcount = 1;
+	   }
+	   document.getElementById("result2").innerHTML = "Number of votes for table tennis: " + localStorage.clickcount + ".";
+	} else {
+	  document.getElementById("result2").innerHTML = "Sorry this survey doesn't work in this browser. Please try again with a better one!";
+	  }
+	}
+  </script
+</head>
+
+<body>
+  <div class="middle">
+      <section>
+	   <img src="images/banner.png">
+	  <ul class= "menu">
+	   <li>
+	      <a href="videos.html"><img src="images/videos.png"></a>
+	   </li>
+	   <li>
+	      <a href="links.html"><img src="images/links.png"></a>
+	   </li>
+	   <li>
+	      <a href="whatson.html"><img src="images/whatson.png"></a>
+	   </li>
+	  </ul>
+	  <div class="innersection">
+	    <h3>Which activity do you want Fox Hill to add to the timetable?</h3>
+		<p><button onclick="clickSurvey()" type="button">Click me if you want pottery!</button></p>
+		<p><button onclick="clickSurvey2()" type="button">Click me if you want table tennis!</button></p>
+		<div id="result"></div>
+		<div id="result2"></div>
+	 </div>
+  </section>
+  <footer>Made by: A. Fox</footer>
+  </div>
+</body>
+
+</html>
+

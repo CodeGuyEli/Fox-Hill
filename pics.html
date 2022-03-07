@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fox Hill Community Space</title>
+  <link href="stylesheet.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="middle">
+      <section>
+	   <img src="images/banner.png">
+	  <ul class= "menu">
+	   <li>
+	      <a href="videos.html"><img src="images/videos.png"></a>
+	   </li>
+	   <li>
+	      <a href="links.html"><img src="images/links.png"></a>
+	   </li>
+	   <li>
+	      <a href="whatson.html"><img src="images/whatson.png"></a>
+	   </li>
+	  </ul>
+	  <div class="slideshow-container">
+	  <div class="slideshow">
+	    <div class="numbertext">1 / 3</div>
+		<img src= "images/img1.jpg" alt= "Painting">
+		<div class="text">Painting at the studio</div>
+	  </div>
+	  <div class="slideshow">
+	    <div class="numbertext">2 / 3</div>
+		<img src= "images/img2.jpg" alt= "Coding club">
+		<div class="text">Coding club</div>
+	  </div>
+	  <div class="slideshow">
+	    <div class="numbertext">3 / 3</div>
+		<img src= "images/img3.jpg" alt= "Dancing">
+		<div class="text">Dancing</div>
+	  </div>
+	  <a class="prev" onclick= "nextPicture(-1)">&#10094;</a>
+	  <a class="next" onclick= "nextPicture(1)">&#10095;</a>
+	  </div>
+	  <div style="text-align:center">
+	    <div class="dot" onclick="currentPicture(1)"></div>
+		<div class="dot" onclick="currentPicture(2)"></div>
+		<div class="dot" onclick="currentPicture(3)"></div>
+	  </div>
+      </section>
+      <footer>Made by: A. Fox</footer>
+  </div>
+  <script>
+    var pictureIndex = 1;
+	showPics(pictureIndex);
+	
+	function nextPicture(n) {
+	  showPics(pictureIndex += n);
+	  }
+	function currentPicture(n) {
+	  showPics(pictureIndex = n);
+	  }
+	
+	function showPics(n) {
+	  var i;
+	  var pictures = document.getElementsByClassName("slideshow");
+	  var dots = document.getElementsByClassName("dot");
+	  if (n > pictures.length) {
+	    pictureIndex = 1
+	  }
+	  if (n < 1) {
+	    pictureIndex = pictures.length
+	  }
+	  for (i = 0; i < pictures.length; i++) {
+	    pictures[i].style.display = "none";
+	  }
+	  for (i=0; i < dots.length; i++) {
+	    dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	 pictures[pictureIndex-1].style.display = "block";
+	  dots[pictureIndex-1].className += " active";
+	}
+  </script>
+</body>
+
+</html>
+
